@@ -5,10 +5,10 @@ using Ocelot.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Configuration.AddOcelotWithSwaggerSupport(options =>
-{
-    options.Folder = "OcelotConfiguration";
-});
+//builder.Configuration.AddOcelotWithSwaggerSupport(options =>
+//{
+//    options.Folder = "OcelotConfiguration";
+//});
 builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
 builder.Services.AddOcelot(builder.Configuration).AddAppConfiguration();
 builder.Services.AddSwaggerForOcelot(builder.Configuration);
@@ -25,7 +25,7 @@ app.UseSwaggerForOcelotUI(opt =>
 
 });
 
-async app.UseOcelot();
+await app.UseOcelot();
 
 app.UseHttpsRedirection();
 
