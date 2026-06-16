@@ -2,6 +2,7 @@ using MMLib.Ocelot.Provider.AppConfiguration;
 using MMLib.SwaggerForOcelot.DependencyInjection;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Ocelot.Provider.Polly;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 //    options.Folder = "OcelotConfiguration";
 //});
 builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
-builder.Services.AddOcelot(builder.Configuration).AddAppConfiguration();
+builder.Services.AddOcelot(builder.Configuration)
+    .AddPolly()
+    .AddAppConfiguration();
 builder.Services.AddSwaggerForOcelot(builder.Configuration);
 
 builder.Services.AddControllers();

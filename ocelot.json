@@ -14,7 +14,14 @@
       ],
       "UpstreamPathTemplate": "/services/{everything}",
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Patch", "Delete" ],
-      "SwaggerKey": "services"
+      "SwaggerKey": "services",
+      "QoSOptions": {
+        "TimeoutValue": 5000,
+        "MinimumThroughput": 2,
+        "BreakDuration": 5000,
+        "FailureRatio": 0.5,
+        "SamplingDuration": 30000
+      }
     },
     {
       "DownstreamPathTemplate": "/api/{everything}",
@@ -27,7 +34,14 @@
       ],
       "UpstreamPathTemplate": "/appointments/{everything}",
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
-      "SwaggerKey": "appointments"
+      "SwaggerKey": "appointments",
+      "QoSOptions": {
+        "TimeoutValue": 5000,
+        "MinimumThroughput": 2,
+        "BreakDuration": 5000,
+        "FailureRatio": 0.5,
+        "SamplingDuration": 30000
+      }
     },
     {
       "DownstreamPathTemplate": "/api/{everything}",
@@ -40,7 +54,14 @@
       ],
       "UpstreamPathTemplate": "/profiles/{everything}",
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
-      "SwaggerKey": "profiles"
+      "SwaggerKey": "profiles",
+      "QoSOptions": {
+        "TimeoutValue": 5000,
+        "MinimumThroughput": 2,
+        "BreakDuration": 5000,
+        "FailureRatio": 0.5,
+        "SamplingDuration": 30000
+      }
     },
     {
       "DownstreamPathTemplate": "/api/{everything}",
@@ -53,7 +74,14 @@
       ],
       "UpstreamPathTemplate": "/documents/{everything}",
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
-      "SwaggerKey": "documents"
+      "SwaggerKey": "documents",
+      "QoSOptions": {
+        "TimeoutValue": 5000,
+        "MinimumThroughput": 2,
+        "BreakDuration": 5000,
+        "FailureRatio": 0.5,
+        "SamplingDuration": 30000
+      }
     }
   ],
   "SwaggerEndPoints": [
