@@ -82,6 +82,26 @@
         "FailureRatio": 0.5,
         "SamplingDuration": 30000
       }
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7271
+        }
+      ],
+      "UpstreamPathTemplate": "/auth/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
+      "SwaggerKey": "auth",
+      "QoSOptions": {
+        "TimeoutValue": 5000,
+        "MinimumThroughput": 2,
+        "BreakDuration": 5000,
+        "FailureRatio": 0.5,
+        "SamplingDuration": 30000
+      }
     }
   ],
   "SwaggerEndPoints": [
@@ -122,6 +142,16 @@
           "Name": "Documents API",
           "Version": "v1",
           "Url": "https://localhost:7266/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "auth",
+      "Config": [
+        {
+          "Name": "Authorization API",
+          "Version": "v1",
+          "Url": "https://localhost:7271/swagger/v1/swagger.json"
         }
       ]
     }
