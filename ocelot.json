@@ -5,11 +5,11 @@
   "Routes": [
     {
       "DownstreamPathTemplate": "/api/{everything}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "host.docker.internal",
-          "Port": 7278
+          "Host": "services-api",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/services/{everything}",
@@ -25,11 +25,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/{everything}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "host.docker.internal",
-          "Port": 7039
+          "Host": "appointments-api",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/appointments/{everything}",
@@ -45,11 +45,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/{everything}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "host.docker.internal",
-          "Port": 7262
+          "Host": "profiles-api",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/profiles/{everything}",
@@ -65,11 +65,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/{everything}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "host.docker.internal",
-          "Port": 7266
+          "Host": "documents-api",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/documents/{everything}",
@@ -85,11 +85,11 @@
     },
     {
       "DownstreamPathTemplate": "/{everything}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "host.docker.internal",
-          "Port": 7271
+          "Host": "auth-api",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/auth/{everything}",
@@ -111,7 +111,7 @@
         {
           "Name": "Services API",
           "Version": "v1",
-          "Url": "https://localhost:7278/swagger/v1/swagger.json"
+          "Url": "http://services-api:8080/swagger/v1/swagger.json"
         }
       ]
     },
@@ -121,7 +121,7 @@
         {
           "Name": "Appointments API",
           "Version": "v1",
-          "Url": "https://localhost:7039/swagger/v1/swagger.json"
+          "Url": "http://appointments-api:8080/swagger/v1/swagger.json"
         }
       ]
     },
@@ -131,7 +131,7 @@
         {
           "Name": "Profiles API",
           "Version": "v1",
-          "Url": "http://localhost:5154/swagger/v1/swagger.json"
+          "Url": "http://profiles-api:8080/swagger/v1/swagger.json"
         }
       ]
     },
@@ -141,7 +141,7 @@
         {
           "Name": "Documents API",
           "Version": "v1",
-          "Url": "https://localhost:7266/swagger/v1/swagger.json"
+          "Url": "http://documents-api:8080/swagger/v1/swagger.json"
         }
       ]
     },
@@ -151,7 +151,7 @@
         {
           "Name": "Authorization API",
           "Version": "v1",
-          "Url": "https://localhost:7271/swagger/v1/swagger.json"
+          "Url": "http://auth-api:8080/swagger/v1/swagger.json"
         }
       ]
     }
