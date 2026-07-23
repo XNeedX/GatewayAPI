@@ -3,6 +3,187 @@
     "BaseUrl": "https://localhost:7160"
   },
   "Routes": [
-    {}
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "services-api",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/services/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Patch", "Delete", "Options" ],
+      "SwaggerKey": "services",
+      "QoSOptions": {
+        "TimeoutValue": 5000,
+        "MinimumThroughput": 2,
+        "BreakDuration": 5000,
+        "FailureRatio": 0.5,
+        "SamplingDuration": 30000
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "appointments-api",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/appointments/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch", "Options" ],
+      "SwaggerKey": "appointments",
+      "QoSOptions": {
+        "TimeoutValue": 5000,
+        "MinimumThroughput": 2,
+        "BreakDuration": 5000,
+        "FailureRatio": 0.5,
+        "SamplingDuration": 30000
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "profiles-api",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/profiles/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ],
+      "SwaggerKey": "profiles",
+      "QoSOptions": {
+        "TimeoutValue": 5000,
+        "MinimumThroughput": 2,
+        "BreakDuration": 5000,
+        "FailureRatio": 0.5,
+        "SamplingDuration": 30000
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "documents-api",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/documents/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ],
+      "SwaggerKey": "documents",
+      "QoSOptions": {
+        "TimeoutValue": 5000,
+        "MinimumThroughput": 2,
+        "BreakDuration": 5000,
+        "FailureRatio": 0.5,
+        "SamplingDuration": 30000
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "auth-api",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/auth/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch", "Options" ],
+      "SwaggerKey": "auth",
+      "QoSOptions": {
+        "TimeoutValue": 5000,
+        "MinimumThroughput": 2,
+        "BreakDuration": 5000,
+        "FailureRatio": 0.5,
+        "SamplingDuration": 30000
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "offices-api",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/offices/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch", "Options" ],
+      "SwaggerKey": "offices",
+      "QoSOptions": {
+        "TimeoutValue": 5000,
+        "MinimumThroughput": 2,
+        "BreakDuration": 5000,
+        "FailureRatio": 0.5,
+        "SamplingDuration": 30000
+      }
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "services",
+      "Config": [
+        {
+          "Name": "Services API",
+          "Version": "v1",
+          "Url": "http://services-api:8080/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "appointments",
+      "Config": [
+        {
+          "Name": "Appointments API",
+          "Version": "v1",
+          "Url": "http://appointments-api:8080/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "profiles",
+      "Config": [
+        {
+          "Name": "Profiles API",
+          "Version": "v1",
+          "Url": "http://profiles-api:8080/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "documents",
+      "Config": [
+        {
+          "Name": "Documents API",
+          "Version": "v1",
+          "Url": "http://documents-api:8080/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "auth",
+      "Config": [
+        {
+          "Name": "Authorization API",
+          "Version": "v1",
+          "Url": "http://auth-api:8080/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "offices",
+      "Config": [
+        {
+          "Name": "Offices API",
+          "Version": "v1",
+          "Url": "http://offices-api:8080/swagger/v1/swagger.json"
+        }
+      ]
+    }
   ]
 }
