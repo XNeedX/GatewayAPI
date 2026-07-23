@@ -102,6 +102,26 @@
         "FailureRatio": 0.5,
         "SamplingDuration": 30000
       }
+    },
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "offices-api",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/offices/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch", "Options" ],
+      "SwaggerKey": "offices",
+      "QoSOptions": {
+        "TimeoutValue": 5000,
+        "MinimumThroughput": 2,
+        "BreakDuration": 5000,
+        "FailureRatio": 0.5,
+        "SamplingDuration": 30000
+      }
     }
   ],
   "SwaggerEndPoints": [
@@ -152,6 +172,16 @@
           "Name": "Authorization API",
           "Version": "v1",
           "Url": "http://auth-api:8080/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "offices",
+      "Config": [
+        {
+          "Name": "Offices API",
+          "Version": "v1",
+          "Url": "http://offices-api:8080/swagger/v1/swagger.json"
         }
       ]
     }
